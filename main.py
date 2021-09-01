@@ -294,11 +294,20 @@ def button(message):
 
 @bot.message_handler(commands=['kran'])
 def button(message):
-  bot.send_message(message.chat.id, '<em>🙋 Kran saytlarni bilish uchun /start komandasini bosing!</em>',  parse_mode= 'HTML')      
+  kranbuttons = types.InlineKeyboardMarkup(row_width=1)
+  back = types.InlineKeyboardButton("BTC kranlar ▶️", callback_data="btckranlar")
+  back1 = types.InlineKeyboardButton('LTC kranlar ▶️', callback_data='ltckranlar')
+  back2 = types.InlineKeyboardButton('DOGE kranlar ▶️', callback_data='dogekranlar')
+  back3 =types.InlineKeyboardButton('Faucet Pay kranlar ▶️', callback_data='faucetpaykranlar')
+  backbut = types.InlineKeyboardButton(text='🏠 Bosh Sahifa', callback_data='mainmenu')
+  kranbuttons.add(back, back1, back2, back3, backbut)
+          
+  bot.send_message(message.chat.id, text= '''<b><u>🤑 Mana o'sha siz izlagan eng yaxshi kriptovalyuta kran saytlar!</u></b>\n<em>Bu yerda joylashgan barcha kran saytlar 100% to'laydi...✅✅✅</em>  
+  \n''', parse_mode='HTML', reply_markup=kranbuttons)
       
 @bot.message_handler(commands=['wallet'])
 def button(message):
-  bot.send_message(message.chat.id, '''☺️<b> Sizga kerakli bo'luvchi online kashaloklar 👇👇👇👇👇👇</b>
+  bot.send_message(message.chat.id, '''☺️<b> Sizga kerakli bo'luvchi online kashaloklar 👇👇👇👇👇👇
 
 1️⃣ 🅿️ Payeer kashalok ochish: https://youtu.be/DmHB0idrOu4
 
@@ -309,11 +318,8 @@ def button(message):
 4️⃣ 🔑Fkwallet ochish: https://youtu.be/PinrYupggdI
 
 #foydali
-
-🏠<em>Bosh sahifaga qaytish uchun /start ni bosing!</em>
-
           \n\n•••  Tarqalamiz...🤟
-          👉 @millyardchatv''',  parse_mode= 'HTML')      
+          👉 @millyardchatv</b>''',  parse_mode= 'HTML')      
       
 @bot.message_handler(commands=['bots'])
 def button(message):
@@ -424,7 +430,7 @@ Referal Code: L5YS6J
 @bot.message_handler(content_types=['text'])
 def text(message):
   if message.text.lower() == 'kran' or message.text.lower() == 'kranlar':
-     bot.send_message(message.chat.id, '<em>🙋 Kran saytlarni bilish uchun /start komandasini bosing!</em>', parse_mode='HTML')
+     bot.send_message(message.chat.id, '<em>🙋 Kran saytlarni bilish uchun /kran komandasini bosing!</em>', parse_mode='HTML')
   elif message.text.lower() == 'salom' or message.text.lower() == 'assalomu aleykum':
         bot.send_message(message.chat.id, '''<b>Assalomu Aleykum! 😊
 Siz MilyardchaTV kanalining yordamchi botiga murojaat qildingiz!
@@ -532,7 +538,39 @@ Referal Code: L5YS6J
 -- Kashaloklar ochish /wallet buyrug'ida yoki <code>wallet</code> deb yozing!
 -- Cryptobotlar /cryptobots buyrug'ida yoki <code>criptobotlar</code> deb yozing!
 -- Mobil dasturlar /mobilapps buyrug'ida yoki <code>mobilapps</code> deb yozing!🤖</em>''',  parse_mode='HTML')
-   
+  elif message.text.lower()=='tezchange':
+    bot.send_message(message.chat.id, '''<em>🔥Agar siz Qiwi Payeer Yoomoney Webmoney kashaloklaringizni to'ldirmoqchi bo'lsangiz sizga ishonchli TEZCHANGE botini taklif etaman! Bu bot bilan tez oson to'ldirib olasiz!</em> ☺️👍
 
-      
+<b>🤖 Bot silkasi: http://t.me/Tezchangebot?start=427322790
+
+🎬 Bot haqida videorolik: https://youtu.be/5SkZgqxKLlk
+
+•••  Tarqalamiz...🤟
+👉 @millyardchatv</b>''', parse_mode='HTML')
+  elif message.text.lower()=='coinbase':
+    bot.send_message(message.chat.id, '''<em>🔥Ko'pchilik juda ko'p sóraydi! Coinbase qanday ochiladi? 
+Coinbase qanday identifikatsiya qilish mumkin!
+Coinbase ocholmayabman deb! 😳</em>
+
+🙋‍♂<b>Endi sizning shu kabi savollaringizga manashu videorolik orqali javob topishingiz mumkin! 
+
+👉 https://youtu.be/IcVyfzswm8U</b>
+
+•••  Tarqalamiz...🤟
+👉 @millyardchatv''', parse_mode='HTML')
+  elif message.text.lower()=='bestchange':
+    bot.send_message(message.chat.id, '''<em>👀Kóp obunachilar sóraydi!...
+Qanday Kriptovalyuta sotib olsam bóladi? 🤔
+LTC click botga qanday pul solsam bóladi! 🙄
+Menda kriptovalyuta bor uni sotishim kerak!.... 😶‍🌫</em>
+
+<b>💥Bunday savollar juda kóp!
+Videorolikni kóring va savollaringizga javob olasiz!😊👇
+
+👉 https://youtu.be/2WptCjY0ePQ
+
+•••  Tarqalamiz...🤟
+👉 @millyardchatv</b>''', parse_mode='HTML')
+
+
 bot.polling()
