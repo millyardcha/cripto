@@ -678,7 +678,7 @@ https://youtu.be/Qa4st7lh5Sc
 •••  Tarqalamiz...🤟
 👉 @millyardchatv''', parse_mode='HTML')
   elif message.text.lower()=='fkwallet':
-    botself.send_message(message.chat.id, '''<b>☺️👍 Sizlar uchun eng qulay bo'lgan kashalokni taklif qilaman! Uning nomi FKWALLET!!!</b>
+    bot.send_message(message.chat.id, '''<b>☺️👍 Sizlar uchun eng qulay bo'lgan kashalokni taklif qilaman! Uning nomi FKWALLET!!!</b>
 
 <em>🔥Siz ushbu kashalok orqali juda ko'p saytlarga pul kiritishingiz mumkin va o'sha kashalokka chiqarib olsangiz ham bo'ladi! Siz ushbu kashalokda $ € ₽ ... va boshqa turli xildagi kriptovalyutalarni saqlashingiz mumkin!
 
