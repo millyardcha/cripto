@@ -14,7 +14,9 @@ def button(message):
     item5 = types.InlineKeyboardButton('📲 Android dasturlar', callback_data= 'androidapps')
     markup.add(item1, item3, item, item4, item2, item5)
     
-    bot.send_message(message.chat.id,  '''<b> 🌠 Assalomu Aleykum! \n\n🙋 Internet orqali pul ishlashingiz mumkin bo'lgan barcha ma'lumotlar shu yerda...</b> \n\n\n<em><u>Kerakli tugmalardan birini tanlang!</u> \n👇👇👇👇👇👇👇👇👇</em>''',  parse_mode= 'HTML', reply_markup=markup)
+    mention = f'<a href="tg://user?id={message.from_user.id}">{message.from_user.first_name}</a>'
+    
+    bot.send_message(message.chat.id,  f'''<b> 🌠 Assalomu Aleykum!, {mention}! \n\n🙋 Internet orqali pul ishlashingiz mumkin bo'lgan barcha ma'lumotlar shu yerda...</b> \n\n\n<em><u>Kerakli tugmalardan birini tanlang!</u> \n👇👇👇👇👇👇👇👇👇</em>''',  parse_mode= 'HTML', reply_markup=markup)
     
     
 @bot.callback_query_handler(func=lambda call:True)
@@ -282,7 +284,50 @@ Referal Code: L5YS6J
 👉 @millyardchatv
 </b>''', parse_mode='HTML', reply_markup=androidbuttons)
       
-      
+      elif call.data == 'faucetpaykranlar':
+        fpbuttons = types.InlineKeyboardMarkup()
+        but = types.InlineKeyboardButton(text='◀️ Orqaga', callback_data='orqaga')
+        backbut = types.InlineKeyboardButton(text='🏠 Bosh Sahifa', callback_data='mainmenu')
+        fpbuttons.add(but, backbut)
+        
+        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text='''<em>❗️ Ushbu saytlar Faucet Pay kashalogiga srazi to'laydi...✅✅✅</em>
+
+<b>1⃣ ClaimCliks LTC
+✏️ Sayt silkasi: https://bit.ly/2QbL0Tw
+🎬 Sayt haqida videorolik: https://youtu.be/lyl2zEo5SBw
+
+2⃣ClaimCliks DOGE
+✏️ Sayt silkasi: https://bit.ly/2OLBXbG
+🎬Sayt haqida videorolik: https://youtu.be/b3_cyAckf2I
+
+3⃣ ClaimCliks TRX
+✏️ Sayt silkasi: https://bit.ly/3diQPaR
+🎬 Sayt haqida videorolik:
+https://youtu.be/Qa4st7lh5Sc
+
+4⃣ ClaimFreeCoins LTC
+✏️ Sayt silkasi: http://bit.ly/2M4xEqn
+🎬 Sayt haqida videorolik: https://youtu.be/KLn4PoRewtY
+
+6⃣ ClaimFreeCoins DOGE
+✏️ Sayt silkasi: https://bit.ly/2NP6yVb
+🎬 Sayt haqida videorolik: https://youtu.be/oF3MqRbfqxQ
+
+7⃣ IqFaucet
+✏️ Sayt manzili: https://bit.ly/3xjiLlN
+🎬 Sayt haqida videorolik: https://youtu.be/OrWqGdATBOs
+
+8⃣ SoonDogeCoin
+✏️ Sayt manzili: https://bit.ly/3jwCRFs
+🎬 Sayt haqida videorolik: https://youtu.be/Q8jtOldtmP4
+
+9️⃣ ClaimFreeCoins TRX
+✏️ Sayt silkasi: https://bit.ly/3i1Uvjp
+🎬 Sayt haqida videorolik: https://youtu.be/pwl3X3J__zw</b>
+
+•••  Tarqalamiz...🤟
+👉 @millyardchatv''', parse_mode='HTML', reply_markup=fpbuttons)
+        
 @bot.message_handler(commands=['help', 'yordam'])
 def button(message):
   bot.send_message(message.chat.id,  '''<b> 🌠 😄 Men siz uchun bir nechta foydali ma'lumotlarni taklif qilaman!</b><em>
@@ -571,6 +616,81 @@ Videorolikni kóring va savollaringizga javob olasiz!😊👇
 
 •••  Tarqalamiz...🤟
 👉 @millyardchatv</b>''', parse_mode='HTML')
+  elif message.text.lower()=='seshanba':
+    bot.send_message(message.chat.id, '''<b>❗️Eslatma</b> 
+
+<em>Ushbu dasturlar orqali SARMOYASIZ LTC va BchCash kriptovalyutani ishlaysiz!
+Dastur har seshanba aftomatik tarzda Coinbase ga to'laydi!
+Dastur to'lashi uchun unga doim kirib turing! Bo'lmasa TO'LAMAYDI!</em> 
+
+<b>Free Litecoin App
+✏️ Dastur manzili: https://bitcoinaliens.com/?ref=803266&game=8&pf=2
+📽️ Dastur orqali ko'proq pul ishlash: https://youtu.be/7ZeRscFjq10
+📽️ Telegram orqali kochirib olish: https://t.me/millyardchatv/2515
+🤖 LTC Click Botga chiqarib olish 👉 https://t.me/millyardchatv/4166
+🅿️ Payeer ga chiqarib olish: https://youtu.be/voTt-FRkZbI
+
+<b>Free Bitcoin Cash App</b>
+✏️ Dastur manzili: https://bitcoinaliens.com/?ref=803266&game=7&pf=2
+📽️ Dastur orqali ko'proq pul ishlash: https://youtu.be/tuL3Rx2gPSM
+📽️ Telegram orqali kochirib olish: https://t.me/millyardchatv/2532</b>
+
+•••  Tarqalamiz...🤟
+👉 @millyardchatv
+
+#seshanba''', parse_mode='HTML')
+  elif message.text.lower()=='faucetpaykranlar':
+    bot.send_message(message.chat.id, '''<em>❗️ Ushbu saytlar Faucet Pay kashalogiga srazi to'laydi...✅✅✅</em>
+
+<b>1⃣ ClaimCliks LTC
+✏️ Sayt silkasi: https://bit.ly/2QbL0Tw
+🎬 Sayt haqida videorolik: https://youtu.be/lyl2zEo5SBw
+
+2⃣ClaimCliks DOGE
+✏️ Sayt silkasi: https://bit.ly/2OLBXbG
+🎬Sayt haqida videorolik: https://youtu.be/b3_cyAckf2I
+
+3⃣ ClaimCliks TRX
+✏️ Sayt silkasi: https://bit.ly/3diQPaR
+🎬 Sayt haqida videorolik:
+https://youtu.be/Qa4st7lh5Sc
+
+4⃣ ClaimFreeCoins LTC
+✏️ Sayt silkasi: http://bit.ly/2M4xEqn
+🎬 Sayt haqida videorolik: https://youtu.be/KLn4PoRewtY
+
+6⃣ ClaimFreeCoins DOGE
+✏️ Sayt silkasi: https://bit.ly/2NP6yVb
+🎬 Sayt haqida videorolik: https://youtu.be/oF3MqRbfqxQ
+
+7⃣ IqFaucet
+✏️ Sayt manzili: https://bit.ly/3xjiLlN
+🎬 Sayt haqida videorolik: https://youtu.be/OrWqGdATBOs
+
+8⃣ SoonDogeCoin
+✏️ Sayt manzili: https://bit.ly/3jwCRFs
+🎬 Sayt haqida videorolik: https://youtu.be/Q8jtOldtmP4
+
+9️⃣ ClaimFreeCoins TRX
+✏️ Sayt silkasi: https://bit.ly/3i1Uvjp
+🎬 Sayt haqida videorolik: https://youtu.be/pwl3X3J__zw</b>
+
+•••  Tarqalamiz...🤟
+👉 @millyardchatv''', parse_mode='HTML')
+  elif message.text.lower()=='fkwallet':
+    botself.send_message(message.chat.id, '''<b>☺️👍 Sizlar uchun eng qulay bo'lgan kashalokni taklif qilaman! Uning nomi FKWALLET!!!</b>
+
+<em>🔥Siz ushbu kashalok orqali juda ko'p saytlarga pul kiritishingiz mumkin va o'sha kashalokka chiqarib olsangiz ham bo'ladi! Siz ushbu kashalokda $ € ₽ ... va boshqa turli xildagi kriptovalyutalarni saqlashingiz mumkin!
+
+😊Siz ushbu kashalokdan Nvuti, Cabura saytlariga pul kiritishda va chiqarib olishda foydalansagiz bo'ladi! Albatta kashalok juda qulay va ishonchli! Hammaga tavsiya qilaman! ☺️👊</em>
+
+<u><b>Batafsil ma'lumotlar videorolikda!</b></u>
+
+<b>✏️ Sayt silkasi: https://bit.ly/3dVGtyb
+🎬 Kashalok haqida to'liq videorolik: https://youtu.be/PinrYupggdI</b>
+
+•••  Tarqalamiz...🤟
+👉 @millyardchatv''', parse_mode='HTML')
 
 
 bot.polling()
