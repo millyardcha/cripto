@@ -187,6 +187,12 @@ Botlar 100% to'laydi...✅✅✅
 ✏️ Sayt silkasi: https://bit.ly/38GpCML
 🎬 Sayt haqida videorolik: https://youtu.be/zx_7inCHn1Y
 
+4⃣ FREELTC ( Har soatda 1000 litoshi ) 
+✏️ Sayt silkasi: https://bit.ly/3DhgYS0
+📽️ Sayt haqida videorolik: https://youtu.be/KwJENuCIVK0
+😶‍🌫 Saytdan pul chiqarib olish: https://youtu.be/uAcfMaHnUn8
+
+
 •••  Tarqalamiz...🤟
 👉 @millyardchatv
 </b>''', parse_mode='HTML', reply_markup=ltcbuttons)
